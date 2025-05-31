@@ -1,0 +1,461 @@
+---
+title: "Title OF Your Thesis"
+format: 
+  pdf:
+    include-in-header: custom_heading.tex
+    geometry: 
+      - left=38mm
+      - top=25mm
+      - bottom=25mm
+      - right=25mm
+bibliography: references.bib
+csl: ieee.csl
+link-citations: true
+header-includes: |
+  \usepackage{fancyhdr}
+  \usepackage{setspace}
+  \usepackage{multirow}
+  \renewcommand{\baselinestretch}{1.25}
+  \AtBeginEnvironment{thebibliography}{\singlespacing}
+  
+---
+\thispagestyle{empty}
+
+\fancyhf{}
+\pagenumbering{roman}
+\setlength{\footskip}{12.5mm} 
+\fancyfoot[C]{\vspace{-12.5mm}\thepage}
+
+\begin{center}
+
+by
+
+Full Name
+
+\vfill
+
+{A THESIS\break SUBMITTED TO THE PROGRAM OF\break DEPARTMENT NAME\break AND THE FACULTY OF GRADUATE STUDIES\break OF TRENT UNIVERSITY\break IN PARTIAL FULFILLMENT OF THE REQUIREMENTS\break FOR THE DEGREE OF\break \textbf {DEGREE NAME}}
+
+\vfill
+
+{$\copyright$ Copyright 2025 by Full Name\break Trent University\break Peterborough, Ontario, Canada}
+
+\end{center}
+
+<!-- END OF PAGE i-->
+
+\newpage
+
+\section*{Title OF Your Thesis.}
+
+\begin{center}
+
+\vfill
+
+{by}
+
+{Full Name}
+
+\end{center}
+
+\vfill
+
+# \noindent \normalsize \textbf{Supervisory committee}
+
+```{=tex}
+\begin{flushleft}
+\setlength{\baselineskip}{1.25\baselineskip}
+
+\rule{15cm}{1pt}\break
+Dr. Supervisor Full Name,\break
+\underline {Supervisor}\break
+(\textit{Department of (Department Name), Trent University, Peterborough, Ontario, Canada})
+
+\rule{15cm}{1pt}\break
+Dr. \break
+\underline {Internal Supervisor}\break
+(\textit{Department of (Department Name), Trent University, Peterborough, Ontario, Canada})
+
+\rule{15cm}{1pt}\break
+Dr. \break
+\underline {External Examiner} \break
+(\textit{})
+
+\end{flushleft}
+```
+<!-- END OF PAGE ii -->
+
+\newpage
+
+# Abstract
+
+<!-- Write your abstract here.... -->
+
+<!-- Reminder: For a Master thesis word limit for abstract is 150 words-->
+
+<!--Reminder:  For a PhD thesis word limit for abstract is 350 words-->
+
+<!-- END OF PAGE iii-->
+
+<!-- \newpage -->
+
+<!-- # Acknowledgement -->
+
+\doublespacing 
+
+<!-- All your work after the `\doublespacing will be double spaced. If you do not want your work to be double spaced, replace `\doublespacing` with `\singlespacing` -->
+
+<!-- I would like to express my deepest gratitude to all those who have supported me throughout the journey of completing this thesis...... -->
+
+<!-- Continue to write your acknowledgement something like this -->
+
+<!-- Reminder: Don't forget to Thank any organization or entity that has funded your research -->
+
+<!-- **Uncomment section if needed** -->
+
+<!-- END OF PAGE iv-->
+
+\newpage
+
+```{=tex}
+\pagestyle{plain}
+\hypersetup{linkcolor=black}
+\setcounter{secnumdepth}{3}
+\cleardoublepage
+\phantomsection
+\tableofcontents
+\addcontentsline{toc}{section}{Table of contents}
+```
+<!-- END OF TOC-->
+
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{section}{List of tables}{\protect\setcounter{page}{6}} 
+<!-- Change page number depending on page number where the list of table starts -->
+\let\oldnumberline\numberline
+\renewcommand{\numberline}{\tablename~\oldnumberline}
+\listoftables
+
+<!-- END OF List of Tables-->
+
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{section}{List of figures}
+\renewcommand{\numberline}{\figurename~\oldnumberline}
+\listoffigures
+
+<!-- END OF List of Figures-->
+
+\newpage
+
+\pagenumbering{arabic}
+<!-- \setlength{\footskip}{12.5mm} -->
+
+\hypersetup{citecolor=black}
+
+# Introduction
+
+```{=tex}
+\begin{flushleft}
+
+\end{flushleft}
+```
+## Background and brief history of your Thesis
+## Thesis Organization
+
+<!-- END OF Introduction-->
+
+\newpage
+
+# Related Work
+
+This chapter will cover previous research that has been done related to this thesis. The first line of every chapter will not have a tab
+
+&emsp; Every paragraph **after the first** will be followed by a tab. 
+
+Lets say you want to create a list. To create a list, do this
+
+1. List item 1
+2. List item 2
+
+&emsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Common Errors
+
+At first when the doc is rendered, some thing might overflow the page, and things might abide by the margin rules. That's fine, and is a known issue. As you keep writing and keep filling all the sections, things will automatically fall in place!
+
+## Related Work Subheading 2
+
+## Summary
+
+<!-- END OF Related Work-->
+\newpage
+
+# Chapter 3 Name {#id-tag} 
+<!--This is how you create a tag to cross reference this chapter-->
+
+## How to cite and create equations in latex 
+
+Next few sentences are to be cited. For that add in the *references.bib* file, add the bibtex version of the citation. Next cite it using the keyword something like this [@example2025]. 
+
+In line latex variable can be created using a single dollar sign, something like this $x$. However, to create a standalone equation, use 2 dollar signs. They can be done something like this
+
+$$
+x = y + z
+$$
+The issue with the above that the not numbered. To resolve that issue, follow the equation with a id-tag something like this 
+
+$$
+x = y + z
+$${#eq-firsteq}
+
+By doing so, the numbered and can be referenced as @eq-firsteq.
+
+To represent a vector use the `\textbf` command. It can be used both within inline and standalone equation, something like this $\textbf{x}$, and in standalone, something like this
+
+$$
+\textbf{x} = y + z
+$$
+At times you might want to create multiple lines of equation within a single block. It can be done this way using latex 
+
+:::{#eq-multi_line_equation}
+```{=latex}
+\begin{align}
+x = y + z \\
+z = q + t
+\end{align}
+```
+:::
+
+It cannot be referenced directly using `@eq-multi_line_equation`, so to overcome that issue, give each equation a `\label`, as such
+
+:::{#eq-another_multi_line_equation}
+```{=latex}
+\begin{align}
+x = y + z \label{new_multi_equation} \\
+z = q + t \label{new_multi_equation2}
+\end{align}
+```
+:::
+
+and reference them using the `\ref` command, something like this Equation \ref{new_multi_equation} and Equation \ref{new_multi_equation2}.
+
+## Chapter 3 Subheading 2
+
+## Chapter 3 Subheading 3
+
+###  How to cross-reference something
+
+So lets say you wrote something in another chapter want and add a reference to that here. That can be done this way. Write the word `Section`, followed by the number of section. Something like this Section [3](#id-tag). By clicking the section number in the pdf, the user will be taken to that section.
+
+### Chapter 3 Subheading 3 - Subhead 2
+
+### Chapter 3 Subheading 3 - Subhead 3
+
+### Chapter 3 Subheading 3 - Subhead 4
+
+### Results of Chapter 3 Subheading 3 {#ResultsofChapter3}
+
+After running a bunch of experiment you would like to show the results in the form of a table as listed in Table [1](#table-id).
+
+::: {#table-id}
+```{=latex}
+\begin{table}[h!]
+\centering
+\caption{Caption of the table}
+\begin{tabular}{ c c } 
+\toprule
+\textbf{Column 1} & \textbf{Column 2} \\
+\midrule
+Item 1   & 0.00 \\
+Item 2   & 1.00 \\
+Item 3   & 66.30 \\
+\textbf{Item 4}      & \textbf{100} \\
+Item 5 & -100.230 \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
+:::
+
+## Chapter 3 Subheading 4
+### Chapter 3 Subheading 4  - Subhead 1
+
+#### Chapter 3 Subheading 4  - Subhead 1 - Subhead 1
+
+####  Chapter 3 Subheading 4  - Subhead 1 - Subhead 2
+
+### Chapter 3 Subheading 4  - Subhead 2
+
+#### Chapter 3 Subheading 4  - Subhead 2 - Subhead 1
+
+### Chapter 3 Subheading 4  - Subhead 3
+
+### Results for Chapter 3 Subheading 4
+
+## Chapter 3 Subheading 5
+
+### Chapter 3 Subheading 5 - Subhead 1
+
+### Chapter 3 Subheading 5 - Subhead 2
+
+### Results for Chapter 3 Subheading 5
+
+Another type of Table [2](#another-table). 
+
+::: {#another-table}
+```{=latex}
+\begin{table}[h!]
+\centering
+\caption{Another Table Caption}
+\begin{tabular}{c c c }
+\toprule
+\textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+\midrule
+\multirow{4}{*}{Item 1} 
+    & Thing 1 & 1, 2, \textbf{2} \\
+    & Thing 2 & \textbf{3}, 2, 1 \\
+    & Thing 3 & \textbf{2}, 3, 4 \\
+    & Thing 4 & \textbf{3}, 4, 5 \\
+\midrule
+\multirow{1}{*}{Item 1}
+    & Thing 1 & \textbf{100}, 200, 300 \\
+\midrule
+\multirow{4}{*}{Item 3}
+    & Thing 1 & 50, 100, 200, \textbf{300} \\
+    & Thing 2 & None, 5, 10, \textbf{15}, 20 \\
+    & Thing 3 & \textbf{2}, 3, 5, 6 \\
+    & Thing 4 & \textbf{1}, 2, 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
+:::
+
+## Summary
+
+<!-- END OF Chapter 3-->
+\newpage
+
+# Chapter 4 Name
+
+## How to create plots 
+
+To create a plot, I would suggest using the ggplot library in `R`. A plot can be created using like this
+
+```{r fig-plot_id, echo=FALSE, warning=FALSE, message=FALSE, fig.width=8, fig.height=5, fig.cap="Figure Caption"}
+library(tidyverse)
+
+# Generic performance data
+perf_data <- tribble(
+  ~Model, ~Metric_1, ~Metric_2, ~Metric_3,
+  "Model_A", 3.2, 5.1, 18.4,
+  "Model_B", 5.5, 6.2, 20.3,
+  "Model_C", 4.7, 5.8, 19.1,
+  "Model_D", 3.6, 4.9, 17.2,
+  "Model_E", 2.9, 4.5, 16.8,
+  "Model_F", 6.1, 7.0, 21.6,
+  "Model_G", 3.3, 4.2, 15.5,
+  "Model_H", 4.4, 5.6, 18.0,
+  "Model_I", 3.8, 5.0, 16.9,
+  "Model_J", 3.9, 5.1, 17.5,
+  "Model_K", 2.7, 4.0, 16.2,
+  "Model_L", 5.9, 6.5, 22.1
+)
+
+# Long format
+perf_long <- perf_data |>
+  pivot_longer(cols = c(Metric_1, Metric_2, Metric_3),
+               names_to = "Metric", values_to = "Value")
+
+# Plot
+ggplot(perf_long, aes(x = Model, y = Value, fill = Metric)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6) +
+  scale_fill_manual(values = c("#8FBAC8", "#F4B183", "#A9D18E")) +
+  theme_minimal(base_size = 11) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, color = "black"),
+    axis.text.y = element_text(color = "black"),
+    axis.title.x = element_text(color = "black", size = 11),
+    axis.title.y = element_text(color = "black", size = 11),
+    plot.title = element_text(size = 13, face = "bold", color = "black"),
+    legend.title = element_blank(),
+    legend.text = element_text(color = "black")
+  ) +
+  labs(
+    x = "Model", y = "Value"
+  )
+```
+
+The plots can be referenced as @fig-plot_id.
+
+### Chapter 4 Subheading 1 Subhead 1
+
+#### Chapter 4 Subheading 1 Subhead 1 Sub 1
+
+#### Chapter 4 Subheading 1 Subhead 1 Sub 2
+
+#### Chapter 4 Subheading 1 Subhead 1 Sub 3
+
+#### Chapter 4 Subheading 1 Subhead 1 Sub 4
+
+### Chapter 4 Subheading 1 Subhead 2
+
+#### Chapter 4 Subheading 1 Subhead 2 Sub 1
+
+#### Chapter 4 Subheading 1 Subhead 2 Sub 2
+
+#### Chapter 4 Subheading 1 Subhead 2 Sub 3
+
+### Chapter 4 Subheading 1 Subhead 3
+
+#### Chapter 4 Subheading 1 Subhead 3 Sub 1
+
+#### Chapter 4 Subheading 1 Subhead 3 Sub 2
+
+
+### Results of Chapter 4 Subheading 1 
+
+## Chapter 4 Subheading 2
+
+### How to add an image
+
+Below, a way to add images and a way to provide captions is show. The image can be referenced something like this @fig-figure_id.  
+
+<!-- Substitue `image.jpg` with the path to your image. -->
+
+![A figure of a different computer devices](image.jpg){#fig-figure_id}  
+
+### Chapter 4 Subheading 2 Subhead 2
+
+### Chapter 4 Subheading 2 Subhead 3
+
+### Results of Chapter 4 Subheading 2
+
+## Chapter 4 Subheading 3
+
+### Chapter 4 Subheading 3 Subhead 1 
+### Chapter 4 Subheading 3 Subhead 2 
+## Chapter 4 Subheading 4
+## Summary
+
+<!--END OF Chapter 4-->
+
+\newpage
+
+# Conclusion
+
+## Contribution
+## Future Works
+
+<!--END OF Conclusion-->
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+\section*{Bibliography}
+
+<!--END OF Bibliography-->
+<!--END OF THESIS-->
