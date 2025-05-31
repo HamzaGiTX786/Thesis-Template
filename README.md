@@ -54,6 +54,6 @@ To modify the heading styles or typography:
 
 * Edit the `custom_heading.tex` file to define or override LaTeX commands related to fonts and section formats.
 
-## 📄 License
+## ⭐ Star
 
-This template is released under the MIT License. Feel free to use and adapt it for your own thesis or academic writing projects.
+If you like the template and it helps you in anyway, please star it, and show your appreciation 😊
